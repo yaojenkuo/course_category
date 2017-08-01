@@ -1,3 +1,9 @@
-<% @courses.each do |course| %>
-    <h2><%= link_to course.title, course_path(course) %></h2>
+<h1><%= params[:category] %></h1>
+
+<% if @courses.count == 0 %>
+    <p>There are no courses in this category.</p>
+<% else %>
+    <% @courses.each do |course| %>
+        <h2><%= link_to course.title, course_path(course) %></h2>
+    <% end %>
 <% end %>

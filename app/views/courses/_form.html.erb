@@ -1,7 +1,9 @@
-<%= simple_form_for @course do |f| %>
+<%= simple_form_for @course, :html => { :multipart => true } do |f| %>
+  <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select a category") %>
   <%= f.input :title %>
   <%= f.input :description %>
   <%= f.input :length %>
   <%= f.input :teacher %>
+  <%= f.input :register_url %>
   <%= f.button :submit %>
 <% end %>

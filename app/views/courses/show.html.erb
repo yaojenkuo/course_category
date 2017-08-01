@@ -1,7 +1,9 @@
 <h2><%= @course.title %></h2>
+<h3><%= @course.category.name %></h3>
 <h3><%= @course.teacher %></h3>
-<h3><%= @course.length %></h3>
+<h4><%= @course.length %> 小時</h4>
 <p><%= @course.description %></p>
+<p><%= @course.register_url %></p>
 
 <%= link_to "Back", root_path %>
 <%= link_to "Edit", edit_course_path(@course) %>

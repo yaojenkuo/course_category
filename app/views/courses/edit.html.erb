@@ -1,3 +1,11 @@
 <h1>Edit Course</h1>
 
-<%= render 'form' %>
+<%= simple_form_for @course, :html => { :multipart => true } do |f| %>
+  <%= f.select :category_id, @categories %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :length %>
+  <%= f.input :teacher %>
+  <%= f.input :register_url %>
+  <%= f.button :submit %>
+<% end %>
