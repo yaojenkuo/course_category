@@ -2,6 +2,7 @@
 
 <%= simple_form_for @course, :html => { :multipart => true } do |f| %>
   <%= f.select :category_id, @categories %>
+  <%= f.file_field :course_img %>
   <%= f.input :title %>
   <%= f.input :description %>
   <%= f.input :length %>

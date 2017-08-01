@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170801042850) do
+ActiveRecord::Schema.define(version: 20170801165638) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -23,10 +23,14 @@ ActiveRecord::Schema.define(version: 20170801042850) do
     t.text     "description"
     t.integer  "length"
     t.string   "teacher"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.string   "register_url"
     t.integer  "category_id"
+    t.string   "course_img_file_name"
+    t.string   "course_img_content_type"
+    t.integer  "course_img_file_size"
+    t.datetime "course_img_updated_at"
   end
 
 end
