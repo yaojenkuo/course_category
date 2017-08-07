@@ -1,4 +1,7 @@
 class Course < ApplicationRecord
+    extend FriendlyId
+    friendly_id :title, :use => :scoped, :scope => :category
+    
     belongs_to :category
     belongs_to :teacher
 

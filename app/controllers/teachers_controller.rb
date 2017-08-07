@@ -40,11 +40,11 @@ class TeachersController < ApplicationController
 
     private
     def teacher_params
-        params.require(:teacher).permit(:name, :experience, :teacher_img)
+        params.require(:teacher).permit(:name, :experience, :teacher_img, :slug)
     end
 
     def find_teacher
-        @teacher = Teacher.find(params[:id])
+        @teacher = Teacher.friendly.find(params[:id])
     end
 
 end
