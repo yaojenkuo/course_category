@@ -1,0 +1,11 @@
+<h1>Teachers</h1>
+
+<div class="row">
+    <% @teachers.each do |teacher| %>
+        <div class="col-md-4"> 
+            <a href="/teachers/<%= teacher.id %>">
+                <%= image_tag teacher.teacher_img.url(:teacher_index), class: "teacher" %>
+            </a>  
+        </div>
+    <% end %>
+</div>

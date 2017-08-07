@@ -13,11 +13,13 @@ class CoursesController < ApplicationController
     def new
         @course = Course.new
         @categories = Category.all.map{ |c| [c.name, c.id] }
+        @teachers = Teacher.all.map{ |c| [c.name, c.id] }
     end
 
     def create
         @course = Course.new(course_params)
         @course.category_id = params[:category_id]
+        @course.teacher_id = params[:teacher_id]
 
         if @course.save
             redirect_to root_path
@@ -31,10 +33,12 @@ class CoursesController < ApplicationController
 
     def edit
         @categories = Category.all.map{ |c| [c.name, c.id] }
+        @teachers = Teacher.all.map{ |c| [c.name, c.id] }
     end
 
     def update
         @course.category_id = params[:category_id]
+        @course.teacher_id = params[:teacher_id]
         if @course.update(course_params)
             redirect_to course_path(@course)
         else
@@ -49,7 +53,7 @@ class CoursesController < ApplicationController
 
     private
     def course_params
-        params.require(:course).permit(:title, :description, :length, :teacher, :register_url, :category_id, :course_img)
+        params.require(:course).permit(:title, :description, :length, :register_url, :category_id, :course_img, :teacher_id)
     end
 
     def find_course

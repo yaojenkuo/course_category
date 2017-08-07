@@ -1,0 +1,6 @@
+<%= simple_form_for @teacher, :html => { :multipart => true } do |f| %>
+  <%= f.file_field :teacher_img %>
+  <%= f.input :name %>
+  <%= f.input :experience %>
+  <%= f.button :submit %>
+<% end %>

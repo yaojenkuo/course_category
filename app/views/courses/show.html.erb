@@ -5,10 +5,10 @@
     <div class="col-md-8">
         <h2><%= @course.title %></h2>
         <h3><%= @course.category.name %></h3>
-        <h3><%= @course.teacher %></h3>
+        <h3><%= @course.teacher.name %></h3>
         <h4><%= @course.length %> 小時</h4>
         <p><%= @course.description %></p>
-        <p><%= @course.register_url %></p>
+        <iframe title= "Accupass 報名表"  marginwidth="0" marginheight="0" frameborder="0" border="0" scrolling="yes" src=<%= @course.register_url %> width="100%" height="500px" ></iframe>
     </div>
 </div>
 

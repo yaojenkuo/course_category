@@ -4,7 +4,7 @@
   <%= f.input :title %>
   <%= f.input :description %>
   <%= f.input :length %>
-  <%= f.input :teacher %>
+  <%= select_tag(:teacher_id, options_for_select(@teachers), :prompt => "Select a teacher") %>
   <%= f.input :register_url %>
   <%= f.button :submit %>
 <% end %>
