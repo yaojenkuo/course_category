@@ -41,8 +41,10 @@
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "About", abouts_path %></li>
             <li><%= link_to "Contact", new_contact_path %></li>
-            <li><%= link_to "Add Course", new_course_path %></li>
-            <li><%= link_to "Add Teacher", new_teacher_path %></li>
+            <% if user_signed_in? %>
+              <li><%= link_to "Add Course", new_course_path %></li>
+              <li><%= link_to "Add Teacher", new_teacher_path %></li>
+            <% end %>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->

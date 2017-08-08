@@ -9,5 +9,7 @@
 </div>
 
 <%= link_to "Back", teachers_path %>
-<%= link_to "Edit", edit_teacher_path(@teacher) %>
-<%= link_to "Delete", teacher_path(@teacher), method: :delete, data: {confirm: "Are you sure you want to delete this teacher?"} %>
+<% if user_signed_in? %>
+    <%= link_to "Edit", edit_teacher_path(@teacher) %>
+    <%= link_to "Delete", teacher_path(@teacher), method: :delete, data: {confirm: "Are you sure you want to delete this teacher?"} %>
+<% end %>

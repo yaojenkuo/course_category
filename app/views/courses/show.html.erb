@@ -3,15 +3,17 @@
         <%= image_tag @course.course_img.url(:course_show), class: "course-show" %>
     </div>
     <div class="col-md-8">
-        <h2><%= @course.title %></h2>
-        <h3><%= @course.category.name %></h3>
-        <h3><%= @course.teacher.name %></h3>
-        <h4><%= @course.length %> 小時</h4>
+        <h2>課程：<%= @course.title %></h2>
+        <h2>類別：<%= @course.category.name %></h2>
+        <h4>講師：<%= @course.teacher.name %></h4>
+        <h4>時數：<%= @course.length %> 小時</h4>
+        <h4>簡介：</h4>
         <p><%=  to_markdown @course.description %></p>
-        <iframe title= "Accupass 報名表"  marginwidth="0" marginheight="0" frameborder="0" border="0" scrolling="yes" src=<%= @course.register_url %> width="100%" height="500px" ></iframe>
+        <%= link_to "報名", @course.register_url, target: :_blank %>
     </div>
 </div>
-
 <%= link_to "Back", root_path %>
-<%= link_to "Edit", edit_course_path(@course) %>
-<%= link_to "Delete", course_path(@course), method: :delete, data: {confirm: "Are you sure you want to delete this course?"} %>
+<% if user_signed_in? %>
+    <%= link_to "Edit", edit_course_path(@course) %>
+    <%= link_to "Delete", course_path(@course), method: :delete, data: {confirm: "Are you sure you want to delete this course?"} %>
+<% end %>
