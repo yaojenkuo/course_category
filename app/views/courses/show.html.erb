@@ -7,6 +7,7 @@
         <h2>類別：<%= @course.category.name %></h2>
         <h4>講師：<%= @course.teacher.name %></h4>
         <h4>時數：<%= @course.length %> 小時</h4>
+        <h4>開課日期：<%= @course.startdate %></h4>
         <h4>簡介：</h4>
         <p><%=  to_markdown @course.description %></p>
         <%= link_to "報名", @course.register_url, target: :_blank %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170808001651) do
+ActiveRecord::Schema.define(version: 20170808030655) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20170808001651) do
     t.datetime "course_img_updated_at"
     t.integer  "teacher_id"
     t.string   "slug"
+    t.date     "startdate"
     t.index ["slug"], name: "index_courses_on_slug", unique: true
   end
 

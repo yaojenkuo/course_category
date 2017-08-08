@@ -5,6 +5,10 @@
     <div class="col-md-8">
         <h2><%= @teacher.name %></h2>
         <p><%= to_markdown @teacher.experience %></p>
+        <h2>近期課程</h2>
+        <% for course in @teacher.courses %>
+            <p><%= link_to course.title, course_path(course) %></p>
+        <% end %>
     </div>
 </div>
 

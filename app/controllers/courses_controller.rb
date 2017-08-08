@@ -4,10 +4,10 @@ class CoursesController < ApplicationController
 
     def index
         if params[:category].blank?
-            @courses = Course.all.order("created_at DESC") # may switch to start_date
+            @courses = Course.all.order("startdate DESC") # may switch to start_date
         else
             @category_id = Category.find_by(name: params[:category]).id
-            @courses = Course.where(:category_id => @category_id).order("created_at DESC") # may switch to start_date
+            @courses = Course.where(:category_id => @category_id).order("startdate DESC") # may switch to start_date
         end
     end
 
@@ -54,7 +54,7 @@ class CoursesController < ApplicationController
 
     private
     def course_params
-        params.require(:course).permit(:title, :description, :length, :register_url, :category_id, :course_img, :teacher_id)
+        params.require(:course).permit(:title, :description, :length, :register_url, :category_id, :course_img, :teacher_id, :startdate)
     end
 
     def find_course
