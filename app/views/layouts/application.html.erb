@@ -7,9 +7,9 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!--<meta property="og:url"           content="http://www.your-domain.com/your-page.html" />-->
-    <!--<meta property="og:type"          content="website" />-->
-    <meta property="og:title"         content="Kyosei Academy" />
-    <meta property="og:description"   content="Kyosei Academy 是 Kyosei.ai 的教育訓練部門，負責規劃企業外訓、在職人士與學生的程式學習課程。" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="<%= @course.title %>" />
+    <!--<meta property="og:description"   content="<%= @course.description %>" />-->
     <!--<meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />-->
   </head>
 
